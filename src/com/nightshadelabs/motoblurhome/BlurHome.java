@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 public class BlurHome extends Activity {
@@ -29,7 +30,7 @@ public class BlurHome extends Activity {
 		
 		context = this;
 		
-		Intent intent = new Intent();
+		Intent intent = getIntent();
 		intent.setComponent(new ComponentName(
 					"com.motorola.blur.home",
 					"com.motorola.blur.home.HomeActivity"));
@@ -38,6 +39,7 @@ public class BlurHome extends Activity {
 				"com.android.launcher.Launcher"));*/
 		intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+		
 		
 		//intent.putExtras(getIntent().getExtras());
 		
